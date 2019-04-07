@@ -1,7 +1,7 @@
 /*************************************************************
 # by        : mohamd abda alazez hashim                      #
 # e-mail    : mohamdmido2011@gmail.com                       #
-# problem   : 10102 - The path in the colored field  #
+# problem   : 10102 - The path in the colored field          #
 *************************************************************/
 
 #include<iostream>
