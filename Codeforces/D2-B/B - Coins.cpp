@@ -1,7 +1,7 @@
 /*************************************************************
 # by        : mohamd abda alazez hashim                      #
 # e-mail    : mohamdmido2011@gmail.com                       #
-# problem   : B - Coins                                      #
+# problem   : Coins                                          #
 *************************************************************/
 
 #include<iostream>
