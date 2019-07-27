@@ -1,7 +1,7 @@
 /*************************************************************
 # by        : mohamd abda alazez hashim                      #
 # e-mail    : mohamdmido2011@gmail.com                       #
-# problem   : 11389	The Bus Driver Problem                #
+# problem   : 11389	The Bus Driver Problem               #
 *************************************************************/
 
 #include<iostream>
