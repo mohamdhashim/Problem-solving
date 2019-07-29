@@ -1,6 +1,6 @@
 /*************************************************************
 # by        : mohamd abda alazez hashim                      #
-# problem   : 230B - T-primes                                #
+# problem   : 1413 - fill conrtainers                        #
 # Time(min) : reading : 10||thinking : 26||coding : 13       #
 # level     : 6/10                                           #
 *************************************************************/
@@ -71,14 +71,9 @@ int bin_search(int start ,int end)
 
 int main()
 {
-    freopen("test.inp", "r", stdin);
-    freopen("test.out", "w", stdout);
-
-
-    int res,bigest=0;
-
     while(EOF)
     {
+        int res,bigest=0;
         cin>>n>>m;
 
         for(int i=0;i<n;i++)
