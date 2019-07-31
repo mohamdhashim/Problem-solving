@@ -8,9 +8,10 @@ int main(){
     int q,start=-1,end=-1;
 
     cin>>s>>q;
-    
+
     for(int sol=0;sol<q;sol++)
     {
+        cin>>ss;
         int j=0;
         for(int i=0;i<s.size();i++)
         {
@@ -27,7 +28,7 @@ int main(){
         if(j==ss.size())
             printf("Matched %d %d\n",start,end);
         else
-            cout<<"Notmatched\n";
+            cout<<"Not matched\n";
     }
 	return 0;
 }
