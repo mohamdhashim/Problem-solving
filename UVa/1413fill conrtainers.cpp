@@ -71,7 +71,7 @@ int bin_search(int start ,int end)
 
 int main()
 {
-    while(EOF)
+    while(!EOF)
     {
         int res,bigest=0;
         cin>>n>>m;
