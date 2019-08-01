@@ -49,4 +49,4 @@ int main()
             printf("%.4lf\n",find_sol());
     }
 }
-//picture link: https://www.dropbox.com/sh/9u53kfvhkvxwv5r/AAB65se2LxqKLULecOdpw8nHa?dl=0 
+//picture link: https://www.dropbox.com/s/o41jo3difl55bse/Screenshot%20from%202019-08-01%2005-44-22.png?dl=0 
