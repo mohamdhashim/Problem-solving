@@ -1,3 +1,4 @@
+//backtracing
 #include <iostream>
 #include <vector>
 #include <set>
@@ -11,7 +12,7 @@ using namespace std;
 vector <int> lst;
 vector <int> sol; //current solution in solve(func);
 
-set<string> sol_set;//the set of all solution found;
+vector<string> sol_set;//the set of all solution found;
 
 int n,t;
 void solve(int i,int curr)
@@ -19,7 +20,6 @@ void solve(int i,int curr)
     if(curr==t)
     {
         string s="";
-
         for(int j=0;j<sol.size();j++)
         {
             s+=to_string(sol[j]);
@@ -27,15 +27,21 @@ void solve(int i,int curr)
         }
 
         s=s.substr(0,s.size()-1);
-        sol_set.insert(s);
+
+        for(int i=0;i<sol_set.size();i++)//to check if this sol exist or not;
+            if(s==sol_set[i])
+                return;
+
+        sol_set.push_back(s);
 
         return;
     }
 
+
     if(i==n)
         return;
 
-    if(curr+lst[i]<=t)
+    if(curr+lst[i]<=t)//to add current index if <=t to curr;
     {
 
         sol.push_back(lst[i]);
@@ -44,7 +50,7 @@ void solve(int i,int curr)
 
     }
 
-    solve(i+1,curr);
+    solve(i+1,curr);//skip this index
 
 
 }
@@ -52,7 +58,7 @@ void solve(int i,int curr)
 int main()
 {
     int x;
-    while(cin>>t>>n)
+    while(cin>>t>>n&&n!=0)
     {
         sol_set.clear();
         lst.clear();
@@ -64,6 +70,7 @@ int main()
         }
 
         solve(0,0);
+        printf("Sums of %d:\n",t);
 
         if(sol_set.empty())
         {
@@ -71,15 +78,10 @@ int main()
             continue;
         }
 
-        //printing output;
-        printf("Sums of %d:\n",t);
-        auto it = sol_set.end();
-        it--;
-        for(;it!=sol_set.begin();it--)
-            cout<<*it<<endl;
 
-        cout<<*it<<endl;
-        //printing output;
+        for(int i=0;i<sol_set.size();i++)
+            cout<<sol_set[i]<<endl;
+
 
 
     }
