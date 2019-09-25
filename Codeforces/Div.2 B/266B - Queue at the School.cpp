@@ -13,7 +13,8 @@
 #include<bitset>
 #include<math.h>
 #include<algorithm>
-#include<string>
+#include<string>const int N=1e3+5;
+char s[N];
 #include<fstream>
 #include<string>
 #include<sstream>
