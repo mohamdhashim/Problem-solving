@@ -1,0 +1,76 @@
+#include <iostream>
+#include <vector>
+#include <math.h>
+#include <set>
+#include <stdio.h>
+#include <string.h>
+
+using namespace std;
+
+set<int>primes;
+int arr[100000000];
+
+void factor_it_pls(int n)
+{
+    memset(arr,0,sizeof arr);
+    primes.clear();
+
+    while(n%2==0)
+    {
+        primes.insert(2);
+        n/=2;
+        arr[2]++;
+    }
+
+
+    for(int i = 3;i*i<n;i+=2)
+    {
+        while(n%i==0)
+        {
+            primes.insert(i);
+            n/=i;
+            arr[i]++;
+        }
+    }
+
+    primes.insert(n);
+    arr[n]++;
+}
+
+
+
+int g(int x,int y)
+{
+
+    factor_it_pls(x);
+
+    return pow(y,arr[y]);
+
+}
+
+int f(int x ,int y)
+{
+    int res =1;
+    factor_it_pls(x);
+    set<int>temp = primes;
+
+    for(auto it = temp.begin();it!=temp.end();it++)
+        res*=g(y,*it);
+
+    return res;
+
+}
+
+int main()
+{
+    int n,res,x;
+    cin>>x>>n;
+
+    for(int i=1;i<=n;i++)
+    {
+        cout<<f(x,i)<<" ";
+
+
+    }
+    return 0;
+}
