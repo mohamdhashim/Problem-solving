@@ -1,0 +1,72 @@
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+#include <iomanip>
+#include <iostream>
+#include <string>
+#include <stdio.h>
+using namespace std;
+
+long long fast_C (int n, int m)// calculate Combinatorics fast
+{
+    int dn; //denominator
+    int fact_to;
+    if(n-m>m)
+    {
+        dn = m;
+        fact_to=n-(n-m);
+    }else
+    {
+        dn = n-m;
+        fact_to=n-m;
+    }
+
+    int arr_n[fact_to];
+    for(int i=0;i<fact_to;i++)
+        arr_n[i] = n--;
+
+    int arr_dn[dn];
+
+    int temp = dn;
+    for(int i=0;i<temp;i++)
+        arr_dn[i]=dn--;
+
+    for(int i=0;i<temp;i++)
+    {
+        for(int j=0;j<fact_to;j++)
+        {
+            if(arr_n[j]%arr_dn[i]==0)
+            {
+                arr_n[j]/=arr_dn[i];
+                arr_dn[i] = 1;
+            }
+        }
+    }
+
+    long long result,up=1,down=1;
+
+    for(int i=0;i<temp;i++)
+        down*=arr_dn[i];
+
+    for(int i=0;i<fact_to;i++)
+        up*=arr_n[i];
+
+    result = up/down;
+    return result;
+}
+int main()
+{
+    //2 99 98 97 96
+    //1 49 48 47 46 44
+    int x,y;
+    cin>>x>>y;
+
+    while(x!=0&y!=0)
+    {
+        printf("%d things taken %d at a time is %ld exactly.\n",x,y,fast_C(x,y));
+        cin>>x>>y;
+
+    }
+
+    return 0;
+}
