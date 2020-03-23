@@ -46,8 +46,13 @@ int main()
     int test=0;
     while(cin>>n)
     {
-        memset(visited,0,sizeof(visited));
-        memset(visited,0,sizeof(arr));
+        for(int i=0;i<25;i++)
+            for(int j=0;j<25;j++)
+                {
+                    visited[i][j]=0;
+                    arr[i][j]=0;
+                }
+        
         test++;
         int count=0;
 
