@@ -1,13 +1,14 @@
-//using : backtracking 
-
 #include <iostream>
+#include <iomanip>
+#include <cmath>
+#include <iomanip>
+#include <iostream>
+#include <string.h>
+#include <stdio.h>
 #include <vector>
-#include <set>
-#include <math.h>
-#include <bits/stdc++.h>
-#include <cstring>
-
+#include <queue>
 using namespace std;
+
 
 int n;
 vector <int> sol;
@@ -42,7 +43,10 @@ void prime(int node)
 
             for(int j=0;j<n;j++)
             {
-                cout<<sol[j]<<" ";
+                if(j==n-1)
+                    cout<<sol[j];
+                else
+                    cout<<sol[j]<<" ";
             }
             cout<<endl;
         }
@@ -73,11 +77,16 @@ void prime(int node)
 
 int main()
 {
-    int head=1,Case=1;
-
+    int head=1,Case=0;
+    bool still_have_sol = false;
     while(cin>>n)
     {
-        printf("Case %d:\n",Case);
+        if (still_have_sol)
+            cout << endl;
+
+        still_have_sol = true;
+
+        printf("Case %d:\n",++Case);
         sol.clear();
         memset(check,0,sizeof(check));
 
@@ -86,7 +95,6 @@ int main()
 
         prime(head);
 
-        Case++;
 
     }
 
